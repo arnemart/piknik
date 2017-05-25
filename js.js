@@ -59,6 +59,7 @@ function setColor(r, g, b) {
   ctx.fillStyle = hex;
   ctx.fillRect(0, 0, 16, 16);
   link.href = canvas.toDataURL("image/x-icon");
+  document.title = hex;
 
   if (dark && current[2] >= 40) {
     dark = false;
