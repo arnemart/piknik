@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "build": "browserify -g [ uglifyify --no-sourcemaps ] js.js > bundle.js",
+    "watch": "watchify -dvo bundle.js js.js"
+  },
+  "dependencies": {
+    "browserify": "^14.3.0",
+    "clipd": "^1.0.0",
+    "color-convert": "^1.9.0",
+    "copy-to-clipboard": "^3.0.6",
+    "uglifyify": "^3.0.4",
+    "watchify": "^3.9.0"
+  }
+}
