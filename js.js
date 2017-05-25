@@ -10,10 +10,10 @@ var dark = false;
 var current;
 var currentHex;
 
-var form = document.getElementsByTagName('form')[0];
-var input = document.getElementsByTagName('input')[0];
-var button = document.getElementsByTagName('button')[0];
-var div = document.getElementsByTagName('div')[0];
+var form = document.querySelector('form');
+var input = document.querySelector('input');
+var button = document.querySelector('button');
+var div = document.querySelector('.xhair');
 
 document.addEventListener('mousemove', function(e) {
   if (picking) {
@@ -25,10 +25,8 @@ document.addEventListener('mousemove', function(e) {
 
 document.addEventListener('mousewheel', function(e) {
   e.preventDefault();
-  if (picking) {
-    z = Math.max(0, Math.min(100, z + e.deltaY / 10));
-    setColor();
-  }
+  z = Math.max(0, Math.min(100, z + e.deltaY / 10));
+  setColor();
 });
 
 function setHSL(h, s, l) {
@@ -48,12 +46,12 @@ function setColor(r, g, b) {
     hex = '#' + convert.hsl.hex(h, s, l);
   }
   currentHex = hex;
-  if (dark && current[2] >= 50) {
+  if (dark && current[2] >= 40) {
     dark = false;
-    div.className = 'dark';
-  } else if (!dark && current[2] < 50) {
+    div.className = 'xhair dark';
+  } else if (!dark && current[2] < 40) {
     dark = true;
-    div.className = 'light';
+    div.className = 'xhair light';
   }
   document.body.style.backgroundColor = hex;
   input.value = hex;
