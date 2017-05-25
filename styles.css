@@ -34,6 +34,7 @@ form:hover {
 form span {
   font-size: 13px;
   align-self: center;
+  margin: 0 0.5em;
 }
 
 .btn {
@@ -69,10 +70,21 @@ button {
   color: white;
   font-weight: 300;
   font-size: 13px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.picking button {
+  opacity: 0;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 button:active {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .xhair {
