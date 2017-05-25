@@ -36,6 +36,21 @@ form span {
   align-self: center;
 }
 
+.btn {
+  margin-left: 1em;
+  opacity: 1;
+  align-self: center;
+  transition: opacity 0.3s ease;
+}
+
+.picking .btn {
+  opacity: 0;
+}
+
+.r {
+  margin-right: auto;
+}
+
 input {
   font-size: 24px;
   font-family: Menlo, "DejaVu Sans Mono", Consolas, monospace;
@@ -60,7 +75,7 @@ button:active {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-div {
+.xhair {
   position: absolute;
   opacity: 0.6;
   top: 0;
@@ -72,43 +87,43 @@ div {
   pointer-events: none;
 }
 
-div span {
+.xhair span {
   position: absolute;
   background-color: black;
 }
 
-div.light span {
+.xhair.light span {
   background-color: white;
 }
 
-div span:nth-child(1) {
+.xhair span:nth-child(1) {
   width: 1px;
   height: 10px;
   top: 0;
   left: 20px;
 }
 
-div span:nth-child(2) {
+.xhair span:nth-child(2) {
   width: 10px;
   height: 1px;
   top: 20px;
   right: 0;
 }
 
-div span:nth-child(3) {
+.xhair span:nth-child(3) {
   width: 1px;
   height: 10px;
   bottom: 0;
   left: 20px;
 }
 
-div span:nth-child(4) {
+.xhair span:nth-child(4) {
   width: 10px;
   height: 1px;
   top: 20px;
   left: 0;
 }
 
-.picking div {
+.picking .xhair {
   display: none;
 }
