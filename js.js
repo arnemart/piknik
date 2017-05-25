@@ -15,6 +15,16 @@ var input = document.querySelector('input');
 var button = document.querySelector('button');
 var div = document.querySelector('.xhair');
 
+var canvas = document.createElement('canvas');
+canvas.width = 16;
+canvas.height = 16;
+var ctx = canvas.getContext('2d');
+
+var link = document.createElement('link');
+link.type = 'image/x-icon';
+link.rel = 'shortcut icon';
+document.querySelector('head').appendChild(link);
+
 document.addEventListener('mousemove', function(e) {
   if (picking) {
     x = e.clientX;
@@ -46,6 +56,10 @@ function setColor(r, g, b) {
     hex = '#' + convert.hsl.hex(h, s, l);
   }
   currentHex = hex;
+  ctx.fillStyle = hex;
+  ctx.fillRect(0, 0, 16, 16);
+  link.href = canvas.toDataURL("image/x-icon");
+
   if (dark && current[2] >= 40) {
     dark = false;
     div.className = 'xhair dark';
