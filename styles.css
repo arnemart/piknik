@@ -11,6 +11,7 @@ body {
   font-family: 'Helvetica Neue', helvetica, sans-serif;
   color: white;
   font-weight: 300;
+  -webkit-font-smoothing: subpixel-antialiased !important;
 }
 
 form {
