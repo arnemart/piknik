@@ -123,11 +123,12 @@ function unlock(e) {
 }
 
 function fromString(str) {
-  var matches = str.trim().match(/^#?(([a-fA-F0-9]{3}){1,2})/);
+  str = str.trim().replace(/^#/, '');
+  var matches = str.trim().match(/^(([a-fA-F0-9]{3}){1,2})/);
   if (matches) {
     setColor.apply(null, convert.hex.rgb(matches[1]));
     return true;
-  } else {
+  } else if (str.length > 0) {
     try {
       setColor.apply(null, convert.keyword.rgb(str.trim().toLowerCase()));
       return true;
