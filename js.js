@@ -45,7 +45,7 @@ function setHSL(h, s, l) {
 
 function setColor(r, g, b) {
   var hex;
-  if (r) {
+  if (r != null) {
     hex = '#' + convert.rgb.hex(r, g, b);
     current = convert.rgb.hsl(r, g, b);
   } else {
@@ -123,10 +123,15 @@ function unlock(e) {
 }
 
 function fromString(str) {
-  var matches = str.match(/^#?(([a-fA-F0-9]{3}){1,2})/);
+  var matches = str.trim().match(/^#?(([a-fA-F0-9]{3}){1,2})/);
   if (matches) {
     setColor.apply(null, convert.hex.rgb(matches[1]));
     return true;
+  } else {
+    try {
+      setColor.apply(null, convert.keyword.rgb(str.trim().toLowerCase()));
+      return true;
+    } catch (e) { }
   }
   return false;
 }
