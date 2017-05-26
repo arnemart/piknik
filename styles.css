@@ -12,6 +12,7 @@ body {
   color: white;
   font-weight: 300;
   -webkit-font-smoothing: subpixel-antialiased !important;
+  overflow: hidden;
 }
 
 form {
